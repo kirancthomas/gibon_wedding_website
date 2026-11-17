@@ -1,26 +1,579 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8f5ef"><title>Gibon & Lini | Wedding</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
-:root{--ink:#34372f;--muted:#77786e;--gold:#a78b5b;--cream:#f8f5ef;--paper:#fffdf9;--line:#e8e1d5}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300}a{color:inherit;text-decoration:none}.topbar{position:absolute;top:0;left:0;width:100%;z-index:2;padding:25px 6%;display:flex;justify-content:space-between;align-items:center;color:#fff}.brand{font-family:'Playfair Display',serif;font-size:22px;letter-spacing:2px}.nav{display:flex;gap:28px;font-size:11px;letter-spacing:2px;text-transform:uppercase}.nav a{opacity:.9}.hero{min-height:720px;height:94vh;max-height:900px;position:relative;display:grid;place-items:center;text-align:center;color:white;background:linear-gradient(180deg,rgba(25,30,24,.35),rgba(25,30,24,.48)),url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85') center/cover}.hero:after{content:'';position:absolute;inset:18px;border:1px solid rgba(255,255,255,.35);pointer-events:none}.hero-content{padding:30px;position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase}.hero h1{font:400 clamp(55px,9vw,112px)/1.08 'Playfair Display',serif;margin:28px 0 20px}.amp{font-style:italic;color:#e6d4ae}.hero-date{font-size:13px;letter-spacing:3px;text-transform:uppercase}.hero-line{width:55px;height:1px;background:#e4d4b4;margin:28px auto}.button{display:inline-block;border:1px solid var(--gold);padding:14px 25px;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.2s}.button.light{border-color:rgba(255,255,255,.8);color:white;margin-top:22px}.button:hover{background:var(--gold);color:white}.section{padding:105px 7%;text-align:center}.section.white{background:var(--paper)}.kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}h2{font:400 clamp(34px,5vw,52px)/1.2 'Playfair Display',serif;margin:15px 0 22px}.intro{max-width:620px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.9}.cross{font:30px 'Playfair Display',serif;color:var(--gold);margin:25px 0}.countdown{display:flex;justify-content:center;gap:clamp(20px,5vw,65px);margin:42px 0 0}.countdown strong{display:block;font:400 42px 'Playfair Display',serif}.countdown span{font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}.details{display:grid;grid-template-columns:repeat(2,1fr);max-width:900px;margin:55px auto 0;gap:22px}.detail-card{padding:45px 25px;background:var(--cream);border:1px solid var(--line)}.detail-icon{font:27px 'Playfair Display',serif;color:var(--gold)}.detail-card h3{font:400 26px 'Playfair Display',serif;margin:15px 0}.detail-card p{font-size:13px;line-height:1.9;color:var(--muted);margin:5px}.detail-card .button{margin-top:20px}.story{display:grid;grid-template-columns:1fr 1fr;max-width:1000px;margin:55px auto 0;align-items:center;text-align:left;gap:55px}.story img{width:100%;height:430px;object-fit:cover}.story-copy p{color:var(--muted);font-size:14px;line-height:2}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1000px;margin:45px auto 0}.gallery img{width:100%;height:310px;object-fit:cover}.rsvp{background:#eeebe3}.rsvp form{max-width:480px;margin:35px auto 0;display:grid;gap:13px}.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:15px;border:1px solid var(--line);background:var(--paper);font:13px 'DM Sans',sans-serif;color:var(--ink)}.rsvp button{background:var(--ink);color:white;border:0;padding:16px;letter-spacing:2px;text-transform:uppercase;font-size:10px;cursor:pointer}.qr-wrap{display:flex;align-items:center;justify-content:center;gap:30px;max-width:550px;margin:35px auto 0;text-align:left}.qr-box{width:130px;height:130px;border:1px dashed var(--gold);background:white;display:grid;place-items:center;text-align:center;padding:12px;color:var(--gold);font-size:10px;letter-spacing:1px}.qr-text{max-width:300px;color:var(--muted);font-size:13px;line-height:1.8}.footer{background:#30352e;color:#f7f3eb;text-align:center;padding:65px 20px}.footer .brand{font-size:30px}.footer p{font-size:10px;letter-spacing:2px;color:#c7c2b7;margin-top:18px}.notice{font-size:11px;color:var(--muted);margin-top:18px}
-@media(max-width:700px){.topbar{padding:20px 7%}.nav{gap:13px;font-size:9px}.nav a:nth-child(2),.nav a:nth-child(3){display:none}.hero{min-height:650px;height:88vh}.section{padding:75px 7%}.details,.story{grid-template-columns:1fr}.story{gap:25px}.story img{height:350px}.gallery{grid-template-columns:1fr 1fr}.gallery img{height:210px}.gallery img:last-child{display:none}.qr-wrap{flex-direction:column;text-align:center}.countdown strong{font-size:34px}}
-</style>
-</head>
-<body>
-<header class="topbar"><a class="brand" href="#home">G <span style="color:#e6d4ae">&</span> L</a><nav class="nav"><a href="#story">Our Story</a><a href="#details">The Wedding</a><a href="#gallery">Gallery</a><a href="#rsvp">RSVP</a></nav></header>
-<section class="hero" id="home"><div class="hero-content"><div class="eyebrow">Together with our families</div><h1>Gibon <span class="amp">&</span><br>Lini</h1><div class="hero-line"></div><div class="hero-date">Monday · 11 January 2027 · Kerala</div><a class="button light" href="#details">Celebrate with us</a></div></section>
-<section class="section white"><div class="kicker">With grateful hearts</div><div class="cross">✝</div><h2>Two lives, one love,<br>one beautiful beginning.</h2><p class="intro">By the grace of God and with the blessing of our families, we joyfully invite you to share in the celebration of our marriage.</p><div class="countdown" id="countdown"><div><strong id="days">000</strong><span>Days</span></div><div><strong id="hours">00</strong><span>Hours</span></div><div><strong id="minutes">00</strong><span>Minutes</span></div><div><strong id="seconds">00</strong><span>Seconds</span></div></div></section>
-<section class="section" id="story"><div class="kicker">A little about us</div><h2>Our Story</h2><div class="story"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85" alt="Wedding couple embracing"><div class="story-copy"><div class="kicker">A journey of love</div><h2 style="font-size:36px">Written in the stars</h2><p>Some of life's most beautiful moments begin with a simple hello. Through friendship, laughter, faith and countless little memories, our paths became one. Now, with God's blessings, we are beginning our forever.</p><p>We can't wait to celebrate this special day with the people who mean the most to us.</p></div></div></section>
-<section class="section white" id="details"><div class="kicker">Save the date</div><h2>The Wedding</h2><p class="intro">We would be honoured to have you with us as we exchange our vows and celebrate our new beginning.</p><div class="details"><div class="detail-card"><div class="detail-icon">✝</div><h3>The Ceremony</h3><p>Holy Family Church</p><p>Thrissur, Kerala</p><p>Saturday, 20 February 2027</p><p>10:00 AM</p><a class="button" href="https://www.google.com/maps/search/?api=1&query=Holy+Family+Church+Thrissur" target="_blank" rel="noopener">View church map</a></div><div class="detail-card"><div class="detail-icon">❀</div><h3>The Reception</h3><p>Grace Convention Centre</p><p>Thrissur, Kerala</p><p>Saturday, 20 February 2027</p><p>12:30 PM onwards</p><a class="button" href="https://www.google.com/maps/search/?api=1&query=Convention+Centre+Thrissur" target="_blank" rel="noopener">View venue map</a></div></div></section>
-<section class="section" id="gallery"><div class="kicker">Moments to remember</div><h2>Our Memories</h2><p class="intro">A few frames from our journey. Replace these sample photos with your own favourite moments.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=85" alt="Wedding rings"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=85" alt="Couple holding hands"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=85" alt="Wedding bouquet"></div></section>
-<section class="section rsvp" id="rsvp"><div class="kicker">Kindly reply</div><h2>Will you join us?</h2><p class="intro">Please let us know if you can celebrate with us. We look forward to seeing you!</p><form id="rsvpForm"><input required name="name" placeholder="Your name"><input name="guests" type="number" min="1" max="10" value="1" placeholder="Number of guests"><select name="attendance" required><option value="">Will you attend?</option><option>Joyfully accepts</option><option>Regretfully declines</option></select><textarea name="message" rows="3" placeholder="Leave a message (optional)"></textarea><button type="submit">Send RSVP</button></form><p class="notice" id="formNotice">Demo form only — connect it to an RSVP service for real responses.</p></section>
-<section class="section white"><div class="kicker">Keep this invitation close</div><h2>Scan to visit our website</h2><div class="qr-wrap"><div class="qr-box">QR CODE<br>PLACEHOLDER<br><small>Replace with live website QR</small></div><div class="qr-text">Once your wedding website is published, generate a QR code using its web address and place it here or on your printed invitation. Guests can scan it to view the event details and venue directions.</div></div></section>
-<footer class="footer"><div class="brand">Gibon <span style="color:#d6bd8f">&</span> Lini</div><p>11 · 01 · 2027 &nbsp; | &nbsp; WITH LOVE AND BLESSINGS</p><div style="font:italic 18px 'Playfair Display';margin-top:25px">“What God has joined together, let no one separate.”</div><p style="margin-top:10px;letter-spacing:1px">MARK 10:9</p></footer>
-<script>
-const weddingDate=new Date('2027-01-11T10:00:00+05:30').getTime();function tick(){let d=Math.max(0,weddingDate-Date.now());document.getElementById('days').textContent=String(Math.floor(d/86400000)).padStart(3,'0');document.getElementById('hours').textContent=String(Math.floor(d%86400000/3600000)).padStart(2,'0');document.getElementById('minutes').textContent=String(Math.floor(d%3600000/60000)).padStart(2,'0');document.getElementById('seconds').textContent=String(Math.floor(d%60000/1000)).padStart(2,'0')}tick();setInterval(tick,1000);document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('formNotice').textContent='Thank you! This is a demo — your response has not been sent to the couple.';e.target.reset()});
-</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f5ef" />
+    <title>Gibon & Lini | Wedding</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+      :root {
+        --ink: #34372f;
+        --muted: #77786e;
+        --gold: #a78b5b;
+        --cream: #f8f5ef;
+        --paper: #fffdf9;
+        --line: #e8e1d5;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .topbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        padding: 25px 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+      }
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        letter-spacing: 2px;
+      }
+      .nav {
+        display: flex;
+        gap: 28px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .nav a {
+        opacity: 0.9;
+      }
+      .hero {
+        min-height: 720px;
+        height: 94vh;
+        max-height: 900px;
+        position: relative;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: white;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(25, 30, 24, 0.35),
+            rgba(25, 30, 24, 0.48)
+          ),
+          url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85")
+            center/cover;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        inset: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        pointer-events: none;
+      }
+      .hero-content {
+        padding: 30px;
+        position: relative;
+        z-index: 1;
+      }
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font:
+          400 clamp(55px, 9vw, 112px)/1.08 "Playfair Display",
+          serif;
+        margin: 28px 0 20px;
+      }
+      .amp {
+        font-style: italic;
+        color: #e6d4ae;
+      }
+      .hero-date {
+        font-size: 13px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      .hero-line {
+        width: 55px;
+        height: 1px;
+        background: #e4d4b4;
+        margin: 28px auto;
+      }
+      .button {
+        display: inline-block;
+        border: 1px solid var(--gold);
+        padding: 14px 25px;
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: 0.2s;
+      }
+      .button.light {
+        border-color: rgba(255, 255, 255, 0.8);
+        color: white;
+        margin-top: 22px;
+      }
+      .button:hover {
+        background: var(--gold);
+        color: white;
+      }
+      .section {
+        padding: 105px 7%;
+        text-align: center;
+      }
+      .section.white {
+        background: var(--paper);
+      }
+      .kicker {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      h2 {
+        font:
+          400 clamp(34px, 5vw, 52px)/1.2 "Playfair Display",
+          serif;
+        margin: 15px 0 22px;
+      }
+      .intro {
+        max-width: 620px;
+        margin: 0 auto;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      .cross {
+        font:
+          30px "Playfair Display",
+          serif;
+        color: var(--gold);
+        margin: 25px 0;
+      }
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: clamp(20px, 5vw, 65px);
+        margin: 42px 0 0;
+      }
+      .countdown strong {
+        display: block;
+        font:
+          400 42px "Playfair Display",
+          serif;
+      }
+      .countdown span {
+        font-size: 9px;
+        letter-spacing: 2px;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+      .details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+        margin: 55px auto 0;
+        gap: 22px;
+      }
+      .detail-card {
+        padding: 45px 25px;
+        background: var(--cream);
+        border: 1px solid var(--line);
+      }
+      .detail-icon {
+        font:
+          27px "Playfair Display",
+          serif;
+        color: var(--gold);
+      }
+      .detail-card h3 {
+        font:
+          400 26px "Playfair Display",
+          serif;
+        margin: 15px 0;
+      }
+      .detail-card p {
+        font-size: 13px;
+        line-height: 1.9;
+        color: var(--muted);
+        margin: 5px;
+      }
+      .detail-card .button {
+        margin-top: 20px;
+      }
+      .story {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1000px;
+        margin: 55px auto 0;
+        align-items: center;
+        text-align: left;
+        gap: 55px;
+      }
+      .story img {
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+      }
+      .story-copy p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 2;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        max-width: 1000px;
+        margin: 45px auto 0;
+      }
+      .gallery img {
+        width: 100%;
+        height: 310px;
+        object-fit: cover;
+      }
+      .rsvp {
+        background: #eeebe3;
+      }
+      .rsvp form {
+        max-width: 480px;
+        margin: 35px auto 0;
+        display: grid;
+        gap: 13px;
+      }
+      .rsvp input,
+      .rsvp select,
+      .rsvp textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+        font:
+          13px "DM Sans",
+          sans-serif;
+        color: var(--ink);
+      }
+      .rsvp button {
+        background: var(--ink);
+        color: white;
+        border: 0;
+        padding: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 10px;
+        cursor: pointer;
+      }
+      .qr-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        max-width: 550px;
+        margin: 35px auto 0;
+        text-align: left;
+      }
+      .qr-box {
+        width: 130px;
+        height: 130px;
+        border: 1px dashed var(--gold);
+        background: white;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 12px;
+        color: var(--gold);
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+      .qr-text {
+        max-width: 300px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .footer {
+        background: #30352e;
+        color: #f7f3eb;
+        text-align: center;
+        padding: 65px 20px;
+      }
+      .footer .brand {
+        font-size: 30px;
+      }
+      .footer p {
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: #c7c2b7;
+        margin-top: 18px;
+      }
+      .notice {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 18px;
+      }
+      @media (max-width: 700px) {
+        .topbar {
+          padding: 20px 7%;
+        }
+        .nav {
+          gap: 13px;
+          font-size: 9px;
+        }
+        .nav a:nth-child(2),
+        .nav a:nth-child(3) {
+          display: none;
+        }
+        .hero {
+          min-height: 650px;
+          height: 88vh;
+        }
+        .section {
+          padding: 75px 7%;
+        }
+        .details,
+        .story {
+          grid-template-columns: 1fr;
+        }
+        .story {
+          gap: 25px;
+        }
+        .story img {
+          height: 350px;
+        }
+        .gallery {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery img {
+          height: 210px;
+        }
+        .gallery img:last-child {
+          display: none;
+        }
+        .qr-wrap {
+          flex-direction: column;
+          text-align: center;
+        }
+        .countdown strong {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home"
+        >G <span style="color: #e6d4ae">&</span> L</a
+      >
+      <nav class="nav">
+        <a href="#story">Our Story</a><a href="#details">The Wedding</a
+        ><a href="#gallery">Gallery</a><a href="#rsvp">RSVP</a>
+      </nav>
+    </header>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Together with our families</div>
+        <h1>Gibon <span class="amp">&</span><br />Lini</h1>
+        <div class="hero-line"></div>
+        <div class="hero-date">Monday · 11 January 2027 · Kerala</div>
+        <a class="button light" href="#details">Celebrate with us</a>
+      </div>
+    </section>
+    <section class="section white">
+      <div class="kicker">With grateful hearts</div>
+      <div class="cross">✝</div>
+      <h2>Two lives, one love,<br />one beautiful beginning.</h2>
+      <p class="intro">
+        By the grace of God and with the blessing of our families, we joyfully
+        invite you to share in the celebration of our marriage.
+      </p>
+      <div class="countdown" id="countdown">
+        <div><strong id="days">000</strong><span>Days</span></div>
+        <div><strong id="hours">00</strong><span>Hours</span></div>
+        <div><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+      </div>
+    </section>
+    <section class="section" id="story">
+      <div class="kicker">A little about us</div>
+      <h2>Our Story</h2>
+      <div class="story">
+        <img
+          src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85"
+          alt="Wedding couple embracing"
+        />
+        <div class="story-copy">
+          <div class="kicker">A journey of love</div>
+          <h2 style="font-size: 36px">Written in the stars</h2>
+          <p>
+            Some of life's most beautiful moments begin with a simple hello.
+            Through friendship, laughter, faith and countless little memories,
+            our paths became one. Now, with God's blessings, we are beginning
+            our forever.
+          </p>
+          <p>
+            We can't wait to celebrate this special day with the people who mean
+            the most to us.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section white" id="details">
+      <div class="kicker">Save the date</div>
+      <h2>The Wedding</h2>
+      <p class="intro">
+        We would be honoured to have you with us as we exchange our vows and
+        celebrate our new beginning.
+      </p>
+      <div class="details">
+        <div class="detail-card">
+          <div class="detail-icon">✝</div>
+          <h3>The Ceremony</h3>
+          <p>Holy Family Church</p>
+          <p>Thrissur, Kerala</p>
+          <p>Saturday, 20 February 2027</p>
+          <p>10:00 AM</p>
+          <a
+            class="button"
+            href="https://www.google.com/maps/search/?api=1&query=Holy+Family+Church+Thrissur"
+            target="_blank"
+            rel="noopener"
+            >View church map</a
+          >
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">❀</div>
+          <h3>The Reception</h3>
+          <p>Grace Convention Centre</p>
+          <p>Thrissur, Kerala</p>
+          <p>Saturday, 20 February 2027</p>
+          <p>12:30 PM onwards</p>
+          <a
+            class="button"
+            href="https://www.google.com/maps/search/?api=1&query=Convention+Centre+Thrissur"
+            target="_blank"
+            rel="noopener"
+            >View venue map</a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="section" id="gallery">
+      <div class="kicker">Moments to remember</div>
+      <h2>Our Memories</h2>
+      <p class="intro">
+        A few frames from our journey. Replace these sample photos with your own
+        favourite moments.
+      </p>
+      <div class="gallery">
+        <img
+          src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=85"
+          alt="Wedding rings"
+        /><img
+          src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=85"
+          alt="Couple holding hands"
+        /><img
+          src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=85"
+          alt="Wedding bouquet"
+        />
+      </div>
+    </section>
+    <section class="section rsvp" id="rsvp">
+      <div class="kicker">Kindly reply</div>
+      <h2>Will you join us?</h2>
+      <p class="intro">
+        Please let us know if you can celebrate with us. We look forward to
+        seeing you!
+      </p>
+      <form id="rsvpForm">
+        <input required name="name" placeholder="Your name" /><input
+          name="guests"
+          type="number"
+          min="1"
+          max="10"
+          value="1"
+          placeholder="Number of guests"
+        /><select name="attendance" required>
+          <option value="">Will you attend?</option>
+          <option>Joyfully accepts</option>
+          <option>Regretfully declines</option></select
+        ><textarea
+          name="message"
+          rows="3"
+          placeholder="Leave a message (optional)"
+        ></textarea
+        ><button type="submit">Send RSVP</button>
+      </form>
+      <p class="notice" id="formNotice">
+        Demo form only — connect it to an RSVP service for real responses.
+      </p>
+    </section>
+    <section class="section white">
+      <div class="kicker">Keep this invitation close</div>
+      <h2>Scan to visit our website</h2>
+      <div class="qr-wrap">
+        <div class="qr-box">
+          QR CODE<br />PLACEHOLDER<br /><small
+            >Replace with live website QR</small
+          >
+        </div>
+        <div class="qr-text">
+          Once your wedding website is published, generate a QR code using its
+          web address and place it here or on your printed invitation. Guests
+          can scan it to view the event details and venue directions.
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="brand">Gibon <span style="color: #d6bd8f">&</span> Lini</div>
+      <p>11 · 01 · 2027 &nbsp; | &nbsp; WITH LOVE AND BLESSINGS</p>
+      <div
+        style="font: italic 18px &quot;Playfair Display&quot;; margin-top: 25px"
+      >
+        “What God has joined together, let no one separate.”
+      </div>
+      <p style="margin-top: 10px; letter-spacing: 1px">MARK 10:9</p>
+    </footer>
+    <script>
+      const weddingDate = new Date("2027-01-11T10:00:00+05:30").getTime();
+      function tick() {
+        let d = Math.max(0, weddingDate - Date.now());
+        document.getElementById("days").textContent = String(
+          Math.floor(d / 86400000),
+        ).padStart(3, "0");
+        document.getElementById("hours").textContent = String(
+          Math.floor((d % 86400000) / 3600000),
+        ).padStart(2, "0");
+        document.getElementById("minutes").textContent = String(
+          Math.floor((d % 3600000) / 60000),
+        ).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(
+          Math.floor((d % 60000) / 1000),
+        ).padStart(2, "0");
+      }
+      tick();
+      setInterval(tick, 1000);
+      document.getElementById("rsvpForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.getElementById("formNotice").textContent =
+          "Thank you! This is a demo — your response has not been sent to the couple.";
+        e.target.reset();
+      });
+    </script>
+  </body>
+</html>
