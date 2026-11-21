@@ -550,30 +550,73 @@
       <p style="margin-top: 10px; letter-spacing: 1px">MARK 10:9</p>
     </footer>
     <script>
-      const weddingDate = new Date("2027-01-11T10:00:00+05:30").getTime();
-      function tick() {
-        let d = Math.max(0, weddingDate - Date.now());
-        document.getElementById("days").textContent = String(
-          Math.floor(d / 86400000),
-        ).padStart(3, "0");
-        document.getElementById("hours").textContent = String(
-          Math.floor((d % 86400000) / 3600000),
-        ).padStart(2, "0");
-        document.getElementById("minutes").textContent = String(
-          Math.floor((d % 3600000) / 60000),
-        ).padStart(2, "0");
-        document.getElementById("seconds").textContent = String(
-          Math.floor((d % 60000) / 1000),
-        ).padStart(2, "0");
-      }
-      tick();
-      setInterval(tick, 1000);
-      document.getElementById("rsvpForm").addEventListener("submit", (e) => {
+            const weddingDate = new Date("2027-01-11T10:00:00+05:30").getTime();
+            function tick() {
+              let d = Math.max(0, weddingDate - Date.now());
+              document.getElementById("days").textContent = String(
+                Math.floor(d / 86400000),
+              ).padStart(3, "0");
+              document.getElementById("hours").textContent = String(
+                Math.floor((d % 86400000) / 3600000),
+              ).padStart(2, "0");
+              document.getElementById("minutes").textContent = String(
+                Math.floor((d % 3600000) / 60000),
+              ).padStart(2, "0");
+              document.getElementById("seconds").textContent = String(
+                Math.floor((d % 60000) / 1000),
+              ).padStart(2, "0");
+            }
+            tick();
+            setInterval(tick, 1000);
+
+      const scriptURL = "https://script.google.com/macros/library/d/1cKWt_maCK6TKIJoWjL_zBZvpxtPo_kGnRqlQ4MJknQBXpHwkBZgsvTMp/2";
+
+      document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
         e.preventDefault();
-        document.getElementById("formNotice").textContent =
-          "Thank you! This is a demo — your response has not been sent to the couple.";
-        e.target.reset();
+
+        const form = e.target;
+        const notice = document.getElementById("formNotice");
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        const formData = {
+          name: form.elements["name"].value,
+          guests: form.elements["guests"].value,
+          attendance: form.elements["attendance"].value,
+          message: form.elements["message"].value
+        };
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+        notice.textContent = "Please wait...";
+
+        try {
+          await fetch(scriptURL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(formData)
+          });
+
+          notice.textContent =
+            "Thank you! Your RSVP has been received.";
+
+          form.reset();
+
+        } catch (error) {
+          notice.textContent =
+            "Unable to submit your RSVP. Please try again.";
+
+          console.error("RSVP Error:", error);
+
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Send RSVP";
+        }
       });
+      ```
+            });
     </script>
   </body>
 </html>
