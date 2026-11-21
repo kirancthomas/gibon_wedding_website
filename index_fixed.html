@@ -390,7 +390,7 @@
         <div class="eyebrow">Together with our families</div>
         <h1>Gibon <span class="amp">&</span><br />Lini</h1>
         <div class="hero-line"></div>
-        <div class="hero-date">Monday · 11 January 2027 · Kerala</div>
+        <div class="hero-date">Saturday · 20 February 2027 · Kerala</div>
         <a class="button light" href="#details">Celebrate with us</a>
       </div>
     </section>
@@ -541,7 +541,7 @@
     </section>
     <footer class="footer">
       <div class="brand">Gibon <span style="color: #d6bd8f">&</span> Lini</div>
-      <p>11 · 01 · 2027 &nbsp; | &nbsp; WITH LOVE AND BLESSINGS</p>
+      <p>20 · 02 · 2027 &nbsp; | &nbsp; WITH LOVE AND BLESSINGS</p>
       <div
         style="font: italic 18px &quot;Playfair Display&quot;; margin-top: 25px"
       >
@@ -550,28 +550,40 @@
       <p style="margin-top: 10px; letter-spacing: 1px">MARK 10:9</p>
     </footer>
     <script>
-            const weddingDate = new Date("2027-01-11T10:00:00+05:30").getTime();
-            function tick() {
-              let d = Math.max(0, weddingDate - Date.now());
-              document.getElementById("days").textContent = String(
-                Math.floor(d / 86400000),
-              ).padStart(3, "0");
-              document.getElementById("hours").textContent = String(
-                Math.floor((d % 86400000) / 3600000),
-              ).padStart(2, "0");
-              document.getElementById("minutes").textContent = String(
-                Math.floor((d % 3600000) / 60000),
-              ).padStart(2, "0");
-              document.getElementById("seconds").textContent = String(
-                Math.floor((d % 60000) / 1000),
-              ).padStart(2, "0");
-            }
-            tick();
-            setInterval(tick, 1000);
+      // Wedding ceremony: 20 February 2027 at 10:00 AM, Kerala time (IST).
+      const weddingDate = new Date("2027-02-20T10:00:00+05:30").getTime();
 
-      const scriptURL = "https://script.google.com/macros/s/AKfycbwA_JBiWsrUyuiV9axuoYFRZoffYmbU918u_UED3dmzR3NPznBwDfb0aFgtxFpnnGC_gA/exec://script.google.com/macros/library/d/1cKWt_maCK6TKIJoWjL_zBZvpxtPo_kGnRqlQ4MJknQBXpHwkBZgsvTMp/2";
+      function tick() {
+        const distance = Math.max(0, weddingDate - Date.now());
 
-      document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
+        document.getElementById("days").textContent = String(
+          Math.floor(distance / 86400000),
+        ).padStart(3, "0");
+
+        document.getElementById("hours").textContent = String(
+          Math.floor((distance % 86400000) / 3600000),
+        ).padStart(2, "0");
+
+        document.getElementById("minutes").textContent = String(
+          Math.floor((distance % 3600000) / 60000),
+        ).padStart(2, "0");
+
+        document.getElementById("seconds").textContent = String(
+          Math.floor((distance % 60000) / 1000),
+        ).padStart(2, "0");
+      }
+
+      tick();
+      setInterval(tick, 1000);
+
+      // IMPORTANT: Replace this with the Web app URL ending in /exec.
+      // It must come from Apps Script > Deploy > Manage deployments.
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwA_JBiWsrUyuiV9axuoYFRZoffYmbU918u_UED3dmzR3NPznBwDfb0aFgtxFpnnGC_gA/exec";
+
+      const rsvpForm = document.getElementById("rsvpForm");
+
+      rsvpForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const form = e.target;
@@ -579,11 +591,20 @@
         const submitButton = form.querySelector('button[type="submit"]');
 
         const formData = {
-          name: form.elements["name"].value,
+          name: form.elements["name"].value.trim(),
           guests: form.elements["guests"].value,
           attendance: form.elements["attendance"].value,
-          message: form.elements["message"].value
+          message: form.elements["message"].value.trim(),
         };
+
+        if (
+          !scriptURL.startsWith("https://script.google.com/macros/s/") ||
+          !scriptURL.endsWith("/exec")
+        ) {
+          notice.textContent =
+            "Please add your Google Apps Script Web app URL first.";
+          return;
+        }
 
         submitButton.disabled = true;
         submitButton.textContent = "Submitting...";
@@ -594,29 +615,25 @@
             method: "POST",
             mode: "no-cors",
             headers: {
-              "Content-Type": "text/plain;charset=utf-8"
+              "Content-Type": "text/plain;charset=utf-8",
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(formData),
           });
 
-          notice.textContent =
-            "Thank you! Your RSVP has been received.";
+          // With no-cors, the browser cannot read Google's response.
+          // Verify that the new row appears in the Google Sheet.
+          notice.textContent = "Your RSVP request was sent. Thank you!";
 
           form.reset();
-
         } catch (error) {
+          console.error("RSVP submission error:", error);
           notice.textContent =
-            "Unable to submit your RSVP. Please try again.";
-
-          console.error("RSVP Error:", error);
-
+            "Unable to send your RSVP. Please check your connection and try again.";
         } finally {
           submitButton.disabled = false;
           submitButton.textContent = "Send RSVP";
         }
       });
-      ```
-            });
     </script>
   </body>
 </html>
