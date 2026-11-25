@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f8f5ef" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <title>Gibon & Lini | Wedding</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
@@ -74,8 +78,7 @@
             rgba(25, 30, 24, 0.35),
             rgba(25, 30, 24, 0.48)
           ),
-          url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85")
-            center/cover;
+          url("./image/bg/bg.jpeg") center/cover;
       }
       .hero:after {
         content: "";
@@ -327,6 +330,165 @@
         color: var(--muted);
         margin-top: 18px;
       }
+      /* Our Story carousel */
+      .sc {
+        padding: 105px 7%;
+        background: var(--cream);
+      }
+      .sc-wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+      .sc-head {
+        text-align: center;
+        margin-bottom: 42px;
+      }
+      .sc-kicker,
+      .sc-sub {
+        color: var(--gold);
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      .sc-title {
+        margin: 12px 0 0;
+        font:
+          400 clamp(36px, 5vw, 54px)/1.2 "Playfair Display",
+          serif;
+      }
+      .sc-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.92fr);
+        align-items: center;
+        gap: clamp(30px, 6vw, 76px);
+      }
+      .sc-media {
+        min-width: 0;
+      }
+      .sc-frame {
+        position: relative;
+        overflow: hidden;
+        background: #eee8dc;
+        border: 1px solid var(--line);
+        box-shadow: 0 14px 38px rgba(52, 55, 47, 0.1);
+      }
+      .sc-track {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overscroll-behavior-x: contain;
+        touch-action: pan-x pan-y;
+      }
+      .sc-track::-webkit-scrollbar {
+        display: none;
+      }
+      .sc-slide {
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
+        scroll-snap-align: start;
+      }
+      .sc-slide img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: contain;
+      }
+      .sc-arrow {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        border-radius: 50%;
+        background: rgba(48, 53, 46, 0.72);
+        color: #fff;
+        font:
+          30px/1 "Playfair Display",
+          serif;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          opacity 0.2s;
+      }
+      .sc-arrow:hover:not(:disabled) {
+        background: var(--gold);
+      }
+      .sc-arrow:disabled {
+        opacity: 0.28;
+        cursor: default;
+      }
+      .sc-prev {
+        left: 14px;
+      }
+      .sc-next {
+        right: 14px;
+      }
+      .sc-dots {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 19px;
+      }
+      .sc-dot {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #c9c1b3;
+        cursor: pointer;
+      }
+      .sc-dot[aria-current="true"] {
+        background: var(--gold);
+        transform: scale(1.3);
+      }
+      .sc-count {
+        margin: 12px 0 0;
+        color: var(--muted);
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+      .sc-text {
+        text-align: left;
+      }
+      .sc-sub {
+        margin: 0 0 14px;
+      }
+      .sc-heading {
+        margin: 0 0 22px;
+        font:
+          400 clamp(30px, 4vw, 43px)/1.2 "Playfair Display",
+          serif;
+      }
+      .sc-body {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 2;
+      }
+      .sc-hint {
+        display: inline-block;
+        margin-top: 14px;
+        color: var(--gold);
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
       @media (max-width: 700px) {
         .topbar {
           padding: 20px 7%;
@@ -347,8 +509,26 @@
           padding: 75px 7%;
         }
         .details,
-        .story {
+        .story,
+        .sc-row {
           grid-template-columns: 1fr;
+        }
+        .sc {
+          padding: 75px 7%;
+        }
+        .sc-head {
+          margin-bottom: 30px;
+        }
+        .sc-row {
+          gap: 28px;
+        }
+        .sc-text {
+          text-align: center;
+        }
+        .sc-arrow {
+          width: 36px;
+          height: 36px;
+          font-size: 26px;
         }
         .story {
           gap: 25px;
@@ -390,7 +570,7 @@
         <div class="eyebrow">Together with our families</div>
         <h1>Gibon <span class="amp">&</span><br />Lini</h1>
         <div class="hero-line"></div>
-        <div class="hero-date">Monday · 11 January 2027 · Kerala</div>
+        <div class="hero-date">Monday · 11 January 2027 · Thrissur</div>
         <a class="button light" href="#details">Celebrate with us</a>
       </div>
     </section>
@@ -409,30 +589,210 @@
         <div><strong id="seconds">00</strong><span>Seconds</span></div>
       </div>
     </section>
-    <section class="section" id="story">
-      <div class="kicker">A little about us</div>
-      <h2>Our Story</h2>
-      <div class="story">
-        <img
-          src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85"
-          alt="Wedding couple embracing"
-        />
-        <div class="story-copy">
-          <div class="kicker">A journey of love</div>
-          <h2 style="font-size: 36px">Written in the stars</h2>
-          <p>
-            Some of life's most beautiful moments begin with a simple hello.
-            Through friendship, laughter, faith and countless little memories,
-            our paths became one. Now, with God's blessings, we are beginning
-            our forever.
-          </p>
-          <p>
-            We can't wait to celebrate this special day with the people who mean
-            the most to us.
-          </p>
+    <section id="story" class="sc">
+      <div class="sc-wrap">
+        <header class="sc-head">
+          <p class="sc-kicker">A little about us</p>
+          <h2 class="sc-title">Our Story</h2>
+        </header>
+
+        <div class="sc-row">
+          <div class="sc-media">
+            <div class="sc-frame">
+              <div
+                class="sc-track"
+                id="scTrack"
+                tabindex="0"
+                aria-roledescription="carousel"
+                aria-label="Our story in nine pictures"
+              >
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/01-cover.webp"
+                    width="1080"
+                    height="1350"
+                    alt="Our Story, written in God’s time: watercolor of the two of us in a greenhouse"
+                  />
+                </figure>
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/02-chapter1-the-match.webp"
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    alt="Chapter 1, The Match: Gibon in Dubai and Lini in Abu Dhabi, connected on Chavara Matrimony"
+                  />
+                </figure>
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/03-chapter2-first-meeting.webp"
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    alt="Chapter 2, First Meeting: a café in Dubai at 9 PM"
+                  />
+                </figure>
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/04-chapter3-one-more-month.webp"
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    alt="Chapter 3, One More Month: Gibon messaging Lini at night"
+                  />
+                </figure>
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/05-chapter4-second-meeting.webp"
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    alt="Chapter 4, Second Meeting: a red rose on the Abu Dhabi waterfront at 8 PM"
+                  />
+                </figure>
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/06-chapter5-two-families.webp"
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    alt="Chapter 5, Two Families: our parents visiting each other’s homes in Kerala"
+                  />
+                </figure>
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/07-chapter6-engaged.webp"
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    alt="Chapter 6, Engaged: our hands with engagement rings"
+                  />
+                </figure>
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/08-chapter7-forever-begins.webp"
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    alt="Chapter 7, Forever Begins: walking hand in hand toward the church"
+                  />
+                </figure>
+                <figure class="sc-slide">
+                  <img
+                    src="./image/our_story/09-face-reveal-blessings.webp"
+                    width="1080"
+                    height="1350"
+                    loading="lazy"
+                    alt="Gibon and Lini together in a sunlit greenhouse, asking for your prayers and blessings, 11 January 2027"
+                  />
+                </figure>
+              </div>
+              <button
+                class="sc-arrow sc-prev"
+                type="button"
+                aria-label="Previous picture"
+              >
+                ‹
+              </button>
+              <button
+                class="sc-arrow sc-next"
+                type="button"
+                aria-label="Next picture"
+              >
+                ›
+              </button>
+            </div>
+            <div
+              class="sc-dots"
+              role="group"
+              aria-label="Choose a picture"
+            ></div>
+            <p class="sc-count" aria-live="polite"></p>
+          </div>
+
+          <div class="sc-text">
+            <p class="sc-sub">How it all began</p>
+            <h3 class="sc-heading">Written in God’s Time</h3>
+            <p class="sc-body">
+              We prayed for the right person. God answered, just not the way
+              either of us imagined.
+            </p>
+            <p class="sc-body">
+              Swipe through and see how He brought two paths together.
+            </p>
+            <span class="sc-hint">Swipe through our story ›</span>
+          </div>
         </div>
       </div>
     </section>
+
+    <script>
+      (function () {
+        var track = document.getElementById("scTrack");
+        if (!track) return;
+        var root = track.closest(".sc");
+        var slides = track.querySelectorAll(".sc-slide");
+        var prev = root.querySelector(".sc-prev");
+        var next = root.querySelector(".sc-next");
+        var dotsBox = root.querySelector(".sc-dots");
+        var count = root.querySelector(".sc-count");
+        var current = 0;
+
+        slides.forEach(function (_, i) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "sc-dot";
+          b.setAttribute(
+            "aria-label",
+            "Picture " + (i + 1) + " of " + slides.length,
+          );
+          b.addEventListener("click", function () {
+            go(i);
+          });
+          dotsBox.appendChild(b);
+        });
+        var dots = dotsBox.querySelectorAll(".sc-dot");
+
+        function go(i) {
+          i = Math.max(0, Math.min(slides.length - 1, i));
+          track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
+        }
+        function update() {
+          current = Math.round(track.scrollLeft / track.clientWidth);
+          dots.forEach(function (d, i) {
+            d.setAttribute("aria-current", i === current ? "true" : "false");
+          });
+          prev.disabled = current === 0;
+          next.disabled = current === slides.length - 1;
+          count.textContent = current + 1 + " / " + slides.length;
+        }
+        prev.addEventListener("click", function () {
+          go(current - 1);
+        });
+        next.addEventListener("click", function () {
+          go(current + 1);
+        });
+        track.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            go(current + 1);
+          }
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            go(current - 1);
+          }
+        });
+        var t;
+        track.addEventListener("scroll", function () {
+          clearTimeout(t);
+          t = setTimeout(update, 60);
+        });
+        window.addEventListener("resize", function () {
+          go(current);
+        });
+        update();
+      })();
+    </script>
     <section class="section white" id="details">
       <div class="kicker">Save the date</div>
       <h2>The Wedding</h2>
@@ -481,16 +841,12 @@
         favourite moments.
       </p>
       <div class="gallery">
-        <img
-          src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=85"
-          alt="Wedding rings"
-        /><img
-          src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=85"
-          alt="Couple holding hands"
-        /><img
-          src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=85"
-          alt="Wedding bouquet"
-        />
+        <img src="./image/our_memorys/IMG_6505.PNG" alt="image1" />
+        <img src="./image/our_memorys/IMG_6504.PNG" alt="image2" />
+        <img src="./image/our_memorys/IMG_6506.PNG" alt="image3" />
+        <img src="./image/our_memorys/IMG_6508.PNG" alt="image4" />
+        <img src="./image/our_memorys/IMG_6510.PNG" alt="image5" />
+        <img src="./image/our_memorys/IMG_6512.PNG" alt="image6" />
       </div>
     </section>
     <section class="section rsvp" id="rsvp">
@@ -519,26 +875,9 @@
         ></textarea
         ><button type="submit">Send RSVP</button>
       </form>
-      <p class="notice" id="formNotice">
-        Demo form only — connect it to an RSVP service for real responses.
-      </p>
+      <p class="notice" id="formNotice"></p>
     </section>
-    <!-- <section class="section white">
-      <div class="kicker">Keep this invitation close</div>
-      <h2>Scan to visit our website</h2>
-      <div class="qr-wrap">
-        <div class="qr-box">
-          QR CODE<br />PLACEHOLDER<br /><small
-            >Replace with live website QR</small
-          >
-        </div>
-        <div class="qr-text">
-          Once your wedding website is published, generate a QR code using its
-          web address and place it here or on your printed invitation. Guests
-          can scan it to view the event details and venue directions.
-        </div>
-      </div>
-    </section> -->
+
     <footer class="footer">
       <div class="brand">Gibon <span style="color: #d6bd8f">&</span> Lini</div>
       <p>11 · 01 · 2027 &nbsp; | &nbsp; WITH LOVE AND BLESSINGS</p>
